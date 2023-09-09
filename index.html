@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage One</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .profile{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            border: 1px solid #212121;
+            padding: 1rem;
+        }
+        .profile-body{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        a{
+            text-decoration: none;
+            background-color: #212121;
+            color: white;
+            width: 100px;
+            text-align: center;
+            padding: 0.3rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <div class="profile-img">
+            <img src="./clint-patterson-dYEuFB8KQJk-unsplash.jpg" alt="Osaro Lawani" data-testid="SlackDisplayImage">
+        </div>
+        <div class="profile-body">
+            <h1 data-testid="Osaro Lawani">Osaro Lawani</h1>
+            <p data-testid="currentDayOfTheWeek"></p>
+            <p data-testid="currentUTCTime"></p>
+            <p data-testid="Frontend">Track: Frontend</p>
+            <a href="https://github.com/osaro123" data-testid="githubURL" target="_blank">Github</a>
+        </div>
+    </div>
+
+    <script>
+        const daysOfTheWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        const currentDate = new Date()
+        const currentDayOfTheWeek = daysOfTheWeek[currentDate.getUTCDay()]
+        document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = `Current day of the week: ${currentDayOfTheWeek}`
+
+        const currentUTCTime = currentDate.toUTCString()
+        document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTime}`
+        console.log(currentDayOfTheWeek);
+        console.log(currentUTCTime);
+    </script>
+</body>
+</html>
