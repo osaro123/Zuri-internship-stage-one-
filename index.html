@@ -54,7 +54,7 @@
             <p data-testid="currentDayOfTheWeek"></p>
             <p data-testid="currentUTCTime"></p>
             <p data-testid="Frontend">Track: Frontend</p>
-            <a href="https://github.com/osaro123" data-testid="githubURL" target="_blank">Github</a>
+            <a href="https://github.com/osaro123/Zuri-internship-stage-one-" data-testid="githubURL" target="_blank">Github</a>
         </div>
     </div>
 
@@ -65,9 +65,10 @@
         document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = `Current day of the week: ${currentDayOfTheWeek}`
 
         const currentUTCTime = currentDate.toUTCString()
-        document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTime}`
+        const currentUTCTimeInMilliSeconds = Date.parse(currentUTCTime)
+        document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTimeInMilliSeconds}`
         console.log(currentDayOfTheWeek);
-        console.log(currentUTCTime);
+        console.log(currentUTCTimeInMilliSeconds);
     </script>
 </body>
 </html>
