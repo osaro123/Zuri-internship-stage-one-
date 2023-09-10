@@ -4,45 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage One</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        img{
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-        }
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .profile{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            border: 1px solid #212121;
-            padding: 1rem;
-        }
-        .profile-body{
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-        a{
-            text-decoration: none;
-            background-color: #212121;
-            color: white;
-            width: 100px;
-            text-align: center;
-            padding: 0.3rem 0;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="profile">
@@ -57,25 +19,6 @@
             <a href="https://github.com/osaro123/Zuri-internship-stage-one-" data-testid="githubURL" target="_blank">Github</a>
         </div>
     </div>
-
-    <script>
-        const updateUTCTime = () => {
-            const daysOfTheWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-            const currentDate = new Date()
-            const currentDayOfTheWeek = daysOfTheWeek[currentDate.getUTCDay()]
-            document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = `Current day of the week: ${currentDayOfTheWeek}`
-
-            const currentUTCTime = currentDate.toUTCString()
-            const currentUTCTimeInMilliSeconds = Date.parse(currentUTCTime)
-            document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTimeInMilliSeconds}`
-            console.log(currentDayOfTheWeek);
-            console.log(currentUTCTimeInMilliSeconds);
-        }
-
-        setInterval(updateUTCTime,1000)
-
-        updateUTCTime()
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
