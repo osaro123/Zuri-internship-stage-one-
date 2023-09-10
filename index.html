@@ -59,16 +59,23 @@
     </div>
 
     <script>
-        const daysOfTheWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-        const currentDate = new Date()
-        const currentDayOfTheWeek = daysOfTheWeek[currentDate.getUTCDay()]
-        document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = `Current day of the week: ${currentDayOfTheWeek}`
+        const updateUTCTime = () => {
+            const daysOfTheWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+            const currentDate = new Date()
+            const currentDayOfTheWeek = daysOfTheWeek[currentDate.getUTCDay()]
+            document.querySelector("[data-testid='currentDayOfTheWeek']").textContent = `Current day of the week: ${currentDayOfTheWeek}`
 
-        const currentUTCTime = currentDate.toUTCString()
-        const currentUTCTimeInMilliSeconds = Date.parse(currentUTCTime)
-        document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTimeInMilliSeconds}`
-        console.log(currentDayOfTheWeek);
-        console.log(currentUTCTimeInMilliSeconds);
+            const currentUTCTime = currentDate.toUTCString()
+            const currentUTCTimeInMilliSeconds = Date.parse(currentUTCTime)
+            document.querySelector("[data-testid='currentUTCTime']").textContent = `Current UTC time: ${currentUTCTimeInMilliSeconds}`
+            console.log(currentDayOfTheWeek);
+            console.log(currentUTCTimeInMilliSeconds);
+        }
+
+        setInterval(updateUTCTime,1000)
+
+        updateUTCTime()
+
     </script>
 </body>
 </html>
